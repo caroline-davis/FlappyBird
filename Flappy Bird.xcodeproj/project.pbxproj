@@ -32,6 +32,7 @@
 		F1DC4F121E6E3B4500A3235B /* Score.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F1DC4F0F1E6E3B4500A3235B /* Score.mp3 */; };
 		F1DC4F171E6E4F5600A3235B /* GameplayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F1DC4F161E6E4F5600A3235B /* GameplayScene.sks */; };
 		F1DC4F1A1E6E4FC500A3235B /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC4F191E6E4FC500A3235B /* GameplayScene.swift */; };
+		F1DC4F1D1E6E7A3B00A3235B /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC4F1C1E6E7A3B00A3235B /* Bird.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		F1DC4F0F1E6E3B4500A3235B /* Score.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Score.mp3; sourceTree = "<group>"; };
 		F1DC4F161E6E4F5600A3235B /* GameplayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameplayScene.sks; sourceTree = "<group>"; };
 		F1DC4F191E6E4FC500A3235B /* GameplayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
+		F1DC4F1C1E6E7A3B00A3235B /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 		F1DC4F151E6E4F1900A3235B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F1DC4F1B1E6E7A1B00A3235B /* Bird Classes */,
 				F1DC4F181E6E4FB200A3235B /* Scene Classes */,
 			);
 			name = Classes;
@@ -255,6 +258,14 @@
 				F1DC4F191E6E4FC500A3235B /* GameplayScene.swift */,
 			);
 			name = "Scene Classes";
+			sourceTree = "<group>";
+		};
+		F1DC4F1B1E6E7A1B00A3235B /* Bird Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F1DC4F1C1E6E7A3B00A3235B /* Bird.swift */,
+			);
+			name = "Bird Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +424,7 @@
 			files = (
 				F1DC4F1A1E6E4FC500A3235B /* GameplayScene.swift in Sources */,
 				F1DC4EC31E6E39CF00A3235B /* GameViewController.swift in Sources */,
+				F1DC4F1D1E6E7A3B00A3235B /* Bird.swift in Sources */,
 				F1DC4EBB1E6E39CF00A3235B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

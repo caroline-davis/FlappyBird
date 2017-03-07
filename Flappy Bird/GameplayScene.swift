@@ -10,6 +10,7 @@ import SpriteKit
 
 class GameplayScene: SKScene {
     
+    var bird = Bird()
     
     override func didMove(to view: SKView) {
         initialize()
@@ -19,10 +20,22 @@ class GameplayScene: SKScene {
         moveBackgroundsAndGrounds()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        bird.flap()
+    }
+    
     func initialize() {
+        createBirds()
         createBackgrounds()
         createGrounds()
         
+    }
+    
+    func createBirds() {
+        bird = Bird(imageNamed: "Blue 1")
+        bird.initalize()
+        bird.position = CGPoint(x: -50, y: 0)
+        self.addChild(bird)
     }
     
     func createBackgrounds(){
@@ -46,9 +59,20 @@ class GameplayScene: SKScene {
             ground.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             // this puts the ground at the middle, then the minus will put it at the bottom
             ground.position = CGPoint(x: CGFloat(i) * ground.size.width, y: -(self.frame.size.height / 2))
+            // be aware that if this has a "?" after physicsBody then it won't work!!!!!
+            ground.physicsBody = SKPhysicsBody(rectangleOf: ground.size)
+            ground.physicsBody?.affectedByGravity = false
+            // makes the ground static so other phsyicsbodys cant move it
+            ground.physicsBody?.isDynamic = false
+            ground.physicsBody?.categoryBitMask = ColliderType.Ground
+          
+        //  Dont need this here because its already in the bird.swift file
+        //  ground.physicsBody?.collisionBitMask = ColliderType.Bird
+        //  ground.physicsBody?.contactTestBitMask = ColliderType.Bird
             self.addChild(ground)
         }
     }
+    
     
     func moveBackgroundsAndGrounds () {
         // moves bground

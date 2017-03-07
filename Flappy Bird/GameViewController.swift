@@ -29,6 +29,10 @@ class GameViewController: UIViewController {
             
             view.showsFPS = true
             view.showsNodeCount = true
+            
+            // comment this out below to get rid of collision box around bird etc.
+            view.showsPhysics = true
+            
         }
     }
 
