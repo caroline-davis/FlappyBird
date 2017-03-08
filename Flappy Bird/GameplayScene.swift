@@ -12,6 +12,8 @@ class GameplayScene: SKScene {
     
     var bird = Bird()
     
+    var pipesHolder = SKNode()
+    
     override func didMove(to view: SKView) {
         initialize()
     }
@@ -28,6 +30,7 @@ class GameplayScene: SKScene {
         createBirds()
         createBackgrounds()
         createGrounds()
+        spawnObstacles()
         
     }
     
@@ -107,5 +110,84 @@ class GameplayScene: SKScene {
 
     }
     
+    func createPipes() {
+        
+        pipesHolder = SKNode()
+        pipesHolder.name = "Holder"
+        
+        let pipeUp = SKSpriteNode(imageNamed: "Pipe 1")
+        let pipeDown = SKSpriteNode(imageNamed: "Pipe 1")
+        
+        pipeUp.name = "Pipe"
+        pipeUp.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        pipeUp.position = CGPoint(x: 0, y: 500)
+        // this rotates the sprite 180 degrees
+        pipeUp.zRotation = CGFloat(M_PI)
+        pipeUp.physicsBody = SKPhysicsBody(rectangleOf: pipeUp.size)
+        pipeUp.physicsBody?.categoryBitMask = ColliderType.Pipes
+        pipeUp.physicsBody?.affectedByGravity = false
+        // makes pipe static
+        pipeUp.physicsBody?.isDynamic = false
+        
+        pipeDown.name = "Pipe"
+        pipeDown.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        pipeDown.position = CGPoint(x: 0, y: -500)
+        pipeDown.physicsBody = SKPhysicsBody(rectangleOf: pipeUp.size)
+        pipeDown.physicsBody?.categoryBitMask = ColliderType.Pipes
+        pipeDown.physicsBody?.affectedByGravity = false
+        // makes pipe static
+        pipeDown.physicsBody?.isDynamic = false
+        
+        pipesHolder.zPosition = 5
+        pipesHolder.position.x = self.frame.width + 100
+        pipesHolder.position.y = 0
+        
+        pipesHolder.addChild(pipeUp)
+        pipesHolder.addChild(pipeDown)
+        
+        self.addChild(pipesHolder)
+        
+        let destination = self.frame.width * 2
+        let move = SKAction.moveTo(x: -destination, duration: TimeInterval(10))
+        let remove = SKAction.removeFromParent()
+        
+        // run an action of 2 actions.. it will do the first action :move then do the second :remove.
+        pipesHolder.run(SKAction.sequence([move, remove]), withKey: "Move")
+        
+    }
+    
+    func spawnObstacles() {
+        
+        // this blocky
+        let spawn = SKAction.run({ () -> Void in
+            self.createPipes()
+        })
+        
+        // will spawn the pipes every 2 seconds
+        let delay = SKAction.wait(forDuration: TimeInterval(2))
+        let sequence = SKAction.sequence([spawn, delay])
+        
+        self.run(SKAction.repeatForever(sequence), withKey: "Spawn")
+        
+        
+    }
+    
+  
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
