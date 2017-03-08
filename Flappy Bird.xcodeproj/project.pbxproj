@@ -33,6 +33,7 @@
 		F1DC4F171E6E4F5600A3235B /* GameplayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F1DC4F161E6E4F5600A3235B /* GameplayScene.sks */; };
 		F1DC4F1A1E6E4FC500A3235B /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC4F191E6E4FC500A3235B /* GameplayScene.swift */; };
 		F1DC4F1D1E6E7A3B00A3235B /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC4F1C1E6E7A3B00A3235B /* Bird.swift */; };
+		F1F365C61E6FCAC600174EEE /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F365C51E6FCAC600174EEE /* Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		F1DC4F161E6E4F5600A3235B /* GameplayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameplayScene.sks; sourceTree = "<group>"; };
 		F1DC4F191E6E4FC500A3235B /* GameplayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
 		F1DC4F1C1E6E7A3B00A3235B /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
+		F1F365C51E6FCAC600174EEE /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 		F1DC4F151E6E4F1900A3235B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F1F365C41E6FCAB900174EEE /* Random Class */,
 				F1DC4F1B1E6E7A1B00A3235B /* Bird Classes */,
 				F1DC4F181E6E4FB200A3235B /* Scene Classes */,
 			);
@@ -266,6 +269,14 @@
 				F1DC4F1C1E6E7A3B00A3235B /* Bird.swift */,
 			);
 			name = "Bird Classes";
+			sourceTree = "<group>";
+		};
+		F1F365C41E6FCAB900174EEE /* Random Class */ = {
+			isa = PBXGroup;
+			children = (
+				F1F365C51E6FCAC600174EEE /* Random.swift */,
+			);
+			name = "Random Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +435,7 @@
 			files = (
 				F1DC4F1A1E6E4FC500A3235B /* GameplayScene.swift in Sources */,
 				F1DC4EC31E6E39CF00A3235B /* GameViewController.swift in Sources */,
+				F1F365C61E6FCAC600174EEE /* Random.swift in Sources */,
 				F1DC4F1D1E6E7A3B00A3235B /* Bird.swift in Sources */,
 				F1DC4EBB1E6E39CF00A3235B /* AppDelegate.swift in Sources */,
 			);
