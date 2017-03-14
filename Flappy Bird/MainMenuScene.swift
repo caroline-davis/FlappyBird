@@ -112,7 +112,7 @@ class MainMenuScene: SKScene {
 
     // creates the highscore info
     func createLabel() {
-        scoreLabel = SKLabelNode(fontNamed: "04b_19.ttf")
+        scoreLabel = SKLabelNode(fontNamed: "04b_19")
         scoreLabel.fontSize = 120
         scoreLabel.position = CGPoint(x: 0, y: -400)
         scoreLabel.text = "\(GameManager.instance.getHighscore())"

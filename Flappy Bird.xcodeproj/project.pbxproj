@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10BFF591E77D12400A6086D /* 04b_19.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1DC4F0B1E6E3B0E00A3235B /* 04b_19.ttf */; };
 		F11C429F1E77AB0A00019C28 /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F11C429E1E77AB0A00019C28 /* MainMenuScene.sks */; };
 		F11C42A11E77AB3700019C28 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11C42A01E77AB3700019C28 /* MainMenuScene.swift */; };
 		F11C42A41E77B06800019C28 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11C42A31E77B06800019C28 /* GameManager.swift */; };
@@ -406,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10BFF591E77D12400A6086D /* 04b_19.ttf in Resources */,
 				F1DC4F101E6E3B4500A3235B /* Dead.mp3 in Resources */,
 				F11C429F1E77AB0A00019C28 /* MainMenuScene.sks in Resources */,
 				F1DC4F011E6E3ADD00A3235B /* Green 4.png in Resources */,
