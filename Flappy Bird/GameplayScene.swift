@@ -19,6 +19,8 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var gameStarted = false
     var isAlive = false
     
+    var press = SKSpriteNode()
+    
     override func didMove(to view: SKView) {
         initialize()
 
@@ -36,6 +38,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         if gameStarted == false {
             isAlive = true
             gameStarted = true
+            press.removeFromParent()
             spawnObstacles()
             bird.physicsBody?.affectedByGravity = true
             bird.flap()
@@ -43,6 +46,22 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         if isAlive {
             bird.flap()
         }
+        for touch in touches {
+            // gets the location of the touch in the scene
+            let location = touch.location(in: self)
+            
+            if atPoint(location).name == "Retry" {
+               // restart the game
+                self.removeAllActions()
+                self.removeAllChildren()
+                initialize()
+            }
+            
+            if atPoint(location).name == "Quit" {
+                // go back to main menu
+            }
+        }
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -75,13 +94,34 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func initialize() {
+        
+        // when you restart the game, everything resets as the scene itself is not refreshed.
+        gameStarted = false
+        isAlive = false
+        score = 0
+        
         physicsWorld.contactDelegate = self
+        
+        createInstructions()
         createBirds()
         createBackgrounds()
         createGrounds()
         createLabel()
         
     }
+    
+    
+    func createInstructions() {
+        press = SKSpriteNode(imageNamed: "Press")
+        press.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        press.position = CGPoint(x: 0, y: 0)
+        press.setScale(1.8)
+        press.zPosition = 10
+        self.addChild(press)
+        
+    }
+    
+    
     
     func createBirds() {
         bird = Bird(imageNamed: "Blue 1")
