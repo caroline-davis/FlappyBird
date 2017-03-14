@@ -16,17 +16,33 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var scoreLabel = SKLabelNode(fontNamed: "04b_19")
     var score = 0
     
+    var gameStarted = false
+    var isAlive = false
+    
     override func didMove(to view: SKView) {
         initialize()
 
     }
     
     override func update(_ currentTime: TimeInterval) {
+        if isAlive {
         moveBackgroundsAndGrounds()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        bird.flap()
+        
+        // this is the first time we touch the screen - isAlive becomes true and everything starts
+        if gameStarted == false {
+            isAlive = true
+            gameStarted = true
+            spawnObstacles()
+            bird.physicsBody?.affectedByGravity = true
+            bird.flap()
+        }
+        if isAlive {
+            bird.flap()
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -47,9 +63,14 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             incrementScore()
         } else if firstBody.node?.name == "Bird" && secondBody.node?.name == "Pipe" {
             
-            print("kill the bird via pipe")
+            if isAlive {
+                birdDied()
+            }
             } else if firstBody.node?.name == "Bird" && secondBody.node?.name == "Ground" {
-            print("kill the bird via ground")
+            
+            if isAlive {
+                birdDied()
+            }
             }
     }
     
@@ -58,7 +79,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         createBirds()
         createBackgrounds()
         createGrounds()
-        spawnObstacles()
         createLabel()
         
     }
@@ -234,6 +254,42 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.text = String(score)
     }
     
+    // kills the player when the bird hits
+    func birdDied() {
+        
+        // stops spawning
+        self.removeAction(forKey: "Spawn")
+        
+        for child in children {
+            if child.name == "Holder" {
+                child.removeAction(forKey: "Move")
+            }
+        }
+
+        isAlive = false
+        
+        let retry = SKSpriteNode(imageNamed: "Retry")
+        let quit = SKSpriteNode(imageNamed: "Quit")
+        
+        retry.name = "Retry"
+        retry.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        retry.position = CGPoint(x: -150, y: -150)
+        retry.zPosition = 7
+        retry.setScale(0)
+        
+        quit.name = "Quit"
+        quit.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        quit.position = CGPoint(x: 150, y: -150)
+        quit.zPosition = 7
+        quit.setScale(0)
+        
+        let scaleUp = SKAction.scale(to: 1, duration: (0.5))
+        retry.run(scaleUp)
+        quit.run(scaleUp)
+        
+        self.addChild(retry)
+        self.addChild(quit)
+    }
   
     
 }

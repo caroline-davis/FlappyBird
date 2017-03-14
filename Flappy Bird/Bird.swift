@@ -26,7 +26,7 @@ import SpriteKit
         self.zPosition = 3
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.height / 2)
-        self.physicsBody?.affectedByGravity = true
+        self.physicsBody?.affectedByGravity = false
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.categoryBitMask = ColliderType.Bird
         self.physicsBody?.collisionBitMask = ColliderType.Ground | ColliderType.Pipes
