@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F11C429F1E77AB0A00019C28 /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F11C429E1E77AB0A00019C28 /* MainMenuScene.sks */; };
+		F11C42A11E77AB3700019C28 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11C42A01E77AB3700019C28 /* MainMenuScene.swift */; };
 		F1DC4EBB1E6E39CF00A3235B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC4EBA1E6E39CF00A3235B /* AppDelegate.swift */; };
 		F1DC4EBF1E6E39CF00A3235B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F1DC4EBE1E6E39CF00A3235B /* Actions.sks */; };
 		F1DC4EC31E6E39CF00A3235B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC4EC21E6E39CF00A3235B /* GameViewController.swift */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F11C429E1E77AB0A00019C28 /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
+		F11C42A01E77AB3700019C28 /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		F1DC4EB71E6E39CF00A3235B /* Flappy Bird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flappy Bird.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DC4EBA1E6E39CF00A3235B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1DC4EBE1E6E39CF00A3235B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				F1DC4F161E6E4F5600A3235B /* GameplayScene.sks */,
+				F11C429E1E77AB0A00019C28 /* MainMenuScene.sks */,
 			);
 			name = Scenes;
 			path = "Flappy Bird";
@@ -259,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				F1DC4F191E6E4FC500A3235B /* GameplayScene.swift */,
+				F11C42A01E77AB3700019C28 /* MainMenuScene.swift */,
 			);
 			name = "Scene Classes";
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1DC4F101E6E3B4500A3235B /* Dead.mp3 in Resources */,
+				F11C429F1E77AB0A00019C28 /* MainMenuScene.sks in Resources */,
 				F1DC4F011E6E3ADD00A3235B /* Green 4.png in Resources */,
 				F1DC4EF81E6E3AD400A3235B /* Blue 3.png in Resources */,
 				F1DC4EC61E6E39CF00A3235B /* Main.storyboard in Resources */,
@@ -433,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F11C42A11E77AB3700019C28 /* MainMenuScene.swift in Sources */,
 				F1DC4F1A1E6E4FC500A3235B /* GameplayScene.swift in Sources */,
 				F1DC4EC31E6E39CF00A3235B /* GameViewController.swift in Sources */,
 				F1F365C61E6FCAC600174EEE /* Random.swift in Sources */,

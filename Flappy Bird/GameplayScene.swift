@@ -58,7 +58,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             }
             
             if atPoint(location).name == "Quit" {
-                // go back to main menu
+                    let mainMenu = MainMenuScene(fileNamed: "MainMenuScene")
+                    mainMenu?.scaleMode = .aspectFill
+                    // presents mainmenu scene view controller
+                    self.view?.presentScene(mainMenu!, transition: SKTransition.doorway(withDuration: 1))
             }
         }
         
