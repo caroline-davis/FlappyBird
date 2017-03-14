@@ -311,6 +311,12 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
 
         isAlive = false
         
+        let highscore = GameManager.instance.getHighscore()
+        if highscore < score {
+            // if current score is greater than the saved highscore then we have a new highscore
+            GameManager.instance.setHighscore(highscore: score)
+        }
+        
         // adds the bird died texture
         bird.texture = bird.diedTexture
         

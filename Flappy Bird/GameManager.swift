@@ -26,8 +26,28 @@ class GameManager {
         }
     }
     
-    func getBird() -> String {3
+    func getBird() -> String {
         return birds[birdIndex]
     }
     
+    // saving the data for the score
+    func setHighscore(highscore: Int) {
+        
+        UserDefaults.standard.set(highscore, forKey: "Highscore")
+    }
+    
+    func getHighscore() -> Int {
+        return UserDefaults.standard.integer(forKey: "Highscore")
+    }
+   
 }
+
+
+
+
+
+
+
+
+
+

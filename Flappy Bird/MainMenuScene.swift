@@ -11,6 +11,7 @@ import SpriteKit
 class MainMenuScene: SKScene {
     
     var birdBtn = SKSpriteNode()
+    var scoreLabel = SKLabelNode()
     
     override func didMove(to view: SKView) {
         initialize()
@@ -30,6 +31,8 @@ class MainMenuScene: SKScene {
             }
             
             if atPoint(location).name == "Highscore" {
+                scoreLabel.removeFromParent()
+                createLabel()
                 
             }
             
@@ -107,7 +110,15 @@ class MainMenuScene: SKScene {
         
     }
 
-    
+    // creates the highscore info
+    func createLabel() {
+        scoreLabel = SKLabelNode(fontNamed: "04b_19.ttf")
+        scoreLabel.fontSize = 120
+        scoreLabel.position = CGPoint(x: 0, y: -400)
+        scoreLabel.text = "\(GameManager.instance.getHighscore())"
+        
+        self.addChild(scoreLabel)
+    }
     
     
     
