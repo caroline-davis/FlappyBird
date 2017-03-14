@@ -127,7 +127,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     
     func createBirds() {
-        bird = Bird(imageNamed: "Blue 1")
+        bird = Bird(imageNamed: "\(GameManager.instance.getBird()) 1")
         bird.initalize()
         bird.position = CGPoint(x: -50, y: 0)
         self.addChild(bird)
@@ -310,6 +310,9 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         }
 
         isAlive = false
+        
+        // adds the bird died texture
+        bird.texture = bird.diedTexture
         
         let retry = SKSpriteNode(imageNamed: "Retry")
         let quit = SKSpriteNode(imageNamed: "Quit")

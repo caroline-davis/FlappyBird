@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F11C429F1E77AB0A00019C28 /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F11C429E1E77AB0A00019C28 /* MainMenuScene.sks */; };
 		F11C42A11E77AB3700019C28 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11C42A01E77AB3700019C28 /* MainMenuScene.swift */; };
+		F11C42A41E77B06800019C28 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11C42A31E77B06800019C28 /* GameManager.swift */; };
 		F1DC4EBB1E6E39CF00A3235B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC4EBA1E6E39CF00A3235B /* AppDelegate.swift */; };
 		F1DC4EBF1E6E39CF00A3235B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F1DC4EBE1E6E39CF00A3235B /* Actions.sks */; };
 		F1DC4EC31E6E39CF00A3235B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC4EC21E6E39CF00A3235B /* GameViewController.swift */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		F11C429E1E77AB0A00019C28 /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
 		F11C42A01E77AB3700019C28 /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		F11C42A31E77B06800019C28 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		F1DC4EB71E6E39CF00A3235B /* Flappy Bird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flappy Bird.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DC4EBA1E6E39CF00A3235B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1DC4EBE1E6E39CF00A3235B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F11C42A21E77B05900019C28 /* GameManager */ = {
+			isa = PBXGroup;
+			children = (
+				F11C42A31E77B06800019C28 /* GameManager.swift */,
+			);
+			name = GameManager;
+			sourceTree = "<group>";
+		};
 		F1DC4EAE1E6E39CF00A3235B = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +262,7 @@
 		F1DC4F151E6E4F1900A3235B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F11C42A21E77B05900019C28 /* GameManager */,
 				F1F365C41E6FCAB900174EEE /* Random Class */,
 				F1DC4F1B1E6E7A1B00A3235B /* Bird Classes */,
 				F1DC4F181E6E4FB200A3235B /* Scene Classes */,
@@ -443,6 +454,7 @@
 				F11C42A11E77AB3700019C28 /* MainMenuScene.swift in Sources */,
 				F1DC4F1A1E6E4FC500A3235B /* GameplayScene.swift in Sources */,
 				F1DC4EC31E6E39CF00A3235B /* GameViewController.swift in Sources */,
+				F11C42A41E77B06800019C28 /* GameManager.swift in Sources */,
 				F1F365C61E6FCAC600174EEE /* Random.swift in Sources */,
 				F1DC4F1D1E6E7A3B00A3235B /* Bird.swift in Sources */,
 				F1DC4EBB1E6E39CF00A3235B /* AppDelegate.swift in Sources */,
